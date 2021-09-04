@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'Admin | Edit Category')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -22,10 +23,10 @@
                             value="{{ $category->name }}">
                     </div>
                     <button class="btn btn-info px-5" onclick="Swal.fire(
-                                                                                    'Good job!',
-                                                                                    'Product has been updated!',
-                                                                                    'success'
-                                                                                  )">Update</button>
+                                                                                        'Good job!',
+                                                                                        'Product has been updated!',
+                                                                                        'success'
+                                                                                      )">Update</button>
                 </form>
 
             </div>

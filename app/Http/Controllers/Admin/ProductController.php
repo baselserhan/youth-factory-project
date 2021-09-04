@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
-use BeyondCode\QueryDetector\Outputs\Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -60,7 +60,7 @@ class ProductController extends Controller
 
         if ($product) {
 
-            // Alert::success('successfully Created', 'Your Created Success');
+            Alert::success('Success', 'Product has been added successfully');
             return redirect()->route('admin.products.index')->with('success', 'Product has been added');
         } else {
             return redirect()->route('admin.products.index')->with('error', 'Product has not been added');
@@ -127,6 +127,7 @@ class ProductController extends Controller
         ]);
 
         if ($product) {
+            Alert::success('Success', 'Product has been updated successfully');
             return redirect()->route('admin.products.index')->with('success', 'Product has been updated');
         } else {
             return redirect()->route('admin.products.index')->with('error', 'Product has not been updated');
@@ -142,6 +143,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+
         unlink(public_path('uploads/' . $product->image));
         $product->delete();
 

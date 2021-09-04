@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'Admin | All Products')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -51,8 +52,8 @@
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger btn-sm" onclick="return confirm('are you sure?')"><i
-                                                class="fas fa-trash"></i></button>
+                                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"
+                                                onclick="return confirm('Are you sure?')"></i></button>
                                     </form>
                                 </td>
                             </tr>

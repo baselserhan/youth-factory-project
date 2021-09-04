@@ -9,22 +9,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'index'])->name('homepage');
 Route::get('/about-us', [SiteController::class, 'about'])->name('about');
 Route::get('/our-products', [SiteController::class, 'products'])->name('products');
-Route::get('/single-product', [SiteController::class, 'productDetails'])->name('productDetails');
-Route::get('/shop', [SiteController::class, 'shop'])->name('shop');
-Route::get('/cart', [SiteController::class, 'cart'])->name('cart');
-Route::get('/checkout', [SiteController::class, 'checkout'])->name('checkout');
+Route::get('/single-product/{id}', [SiteController::class, 'productDetails'])->name('productDetails');
+Route::get('/blog', [SiteController::class, 'news'])->name('news');
+Route::get('/blog/{slug}', [SiteController::class, 'newsDetails'])->name('newsDetails');
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+Route::post('/contact', [SiteController::class, 'contactSubmit'])->name('contactSubmit');
+Route::post('/add-comment', [SiteController::class, 'store'])->name('store');
 
 
 // Auth
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Google login
-Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
-Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
-
-// Facebook login
-Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
-Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);

@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'Admin | Edit Product')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -38,7 +39,7 @@
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image">
-                        <img width="150" src="{{ asset('uploads/' . $product->image) }}" alt="">
+                        <img width="100" src="{{ asset('uploads/' . $product->image) }}" alt="">
                         <label class="custom-file-label" for="customFile">Choose image</label>
                     </div>
                     <div class="form-group">
@@ -52,11 +53,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <button class="btn btn-info px-5" onclick="Swal.fire(
-                                                                            'Good job!',
-                                                                            'Product has been updated!',
-                                                                            'success'
-                                                                          )">Update</button>
+                    <button class="btn btn-info px-5">Update</button>
                 </form>
 
             </div>

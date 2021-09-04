@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'Admin | All Categories')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">

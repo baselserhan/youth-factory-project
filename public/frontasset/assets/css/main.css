@@ -16,10 +16,13 @@ html {
     font-weight: 400;
     line-height: 28px;
     height: 100%;
+    font-family: "Amiri", serif;
+    font-family: "Tajawal", sans-serif;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Amiri", serif;
+    font-family: "Tajawal", sans-serif;
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.1px;
@@ -57,7 +60,8 @@ h5,
 .h5,
 h6,
 .h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Amiri", serif;
+    font-family: "Tajawal", sans-serif;
     font-weight: 700;
     margin: 0 0 1.25rem 0;
     color: #051922;
@@ -434,19 +438,23 @@ p:last-child {
 }
 
 a.boxed-btn {
-    font-family: "Poppins", sans-serif;
+    font-family: "Amiri", serif;
+    font-family: "Tajawal", sans-serif;
     display: inline-block;
     background-color: #f28123;
     color: #fff;
     padding: 10px 20px;
+    font-weight: bold;
 }
 
 a.bordered-btn {
-    font-family: "Poppins", sans-serif;
+    font-family: "Amiri", serif;
+    font-family: "Tajawal", sans-serif;
     display: inline-block;
     color: #fff;
     border: 2px solid #f28123;
     padding: 7px 20px;
+    font-weight: bold;
 }
 
 a.read-more-btn {
@@ -501,14 +509,15 @@ a.cart-btn {
 }
 
 .breadcrumb-bg {
-    background-image: url(../img/about-us.jpg);
+    background-image: url(../img/AbuAita-products/product3.jpg);
 }
 
 .breadcrumb-text p {
     color: #f28123;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 7px;
+    font-family: Tajawal, sans-serif;
+    font-size: 20px;
 }
 
 .breadcrumb-text h1 {
@@ -578,6 +587,7 @@ nav.main-menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    padding-top: 10px;
 }
 
 nav.main-menu ul li {
@@ -907,7 +917,7 @@ h2.widget-title {
 
 h2.widget-title:after {
     position: absolute;
-    left: 0;
+    left: 35px;
     bottom: 0;
     width: 20px;
     height: 2px;
@@ -919,6 +929,7 @@ h2.widget-title:after {
     color: #fff;
     opacity: 0.7;
     line-height: 1.8;
+    font-family: Tajawal, sans-serif;
 }
 
 .footer-box ul {
@@ -942,8 +953,7 @@ h2.widget-title:after {
     background-color: #012738;
     width: 78%;
     padding: 15px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 5px;
     color: #fff;
 }
 
@@ -953,8 +963,7 @@ h2.widget-title:after {
     background-color: #012738;
     color: #f28123;
     padding: 14px 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -1434,8 +1443,9 @@ body {
     color: #f28123;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 7px;
-    font-size: 15px;
+    font-family: "Amiri", serif;
+    font-family: "Tajawal", sans-serif;
+    font-size: 25px;
 }
 
 .hero-text h1 {
@@ -1500,15 +1510,15 @@ input[type="submit"] {
 }
 
 .homepage-bg-1 {
-    background-image: url(../img/hero-bg.jpg);
+    background-image: url(../../assets/img/background.jpg);
 }
 
 .homepage-bg-2 {
-    background-image: url(../img/hero-bg-2.jpg);
+    background-image: url(../../assets/img/AbuAita-products/product1.jpg);
 }
 
 .homepage-bg-3 {
-    background-image: url(../img/hero-bg-3.jpg);
+    background-image: url(../../assets/img/AbuAita-products/product7.jpg);
 }
 
 .homepage-slider {
@@ -2101,7 +2111,7 @@ a.video-play-btn {
 }
 
 .abt-bg {
-    background-image: url(../img/about-us.jpg);
+    background-image: url(../img/AbuAita-products/product12.jpg);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -2120,7 +2130,6 @@ a.video-play-btn {
     width: 100%;
     height: 100%;
     content: "";
-    background-color: #051922;
     opacity: 0.3;
 }
 
@@ -2130,9 +2139,11 @@ a.video-play-btn {
 }
 
 .abt-text p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
+    font-family: "Tajawal", sans-serif;
+    font-weight: bold;
 }
 
 .abt-text p.top-sub {
@@ -2193,7 +2204,7 @@ a.video-play-btn {
 }
 
 .feature-bg:after {
-    background-image: url(../img/about-us.jpg);
+    background-image: url(../img/about_us.jpg);
     position: absolute;
     right: 0;
     top: 0;
@@ -2505,9 +2516,11 @@ p.single-product-pricing span {
 }
 
 .single-product-content p {
-    font-size: 15px;
-    color: #555;
+    font-size: 18px;
+    color: #000;
     line-height: 1.8;
+    font-family: Tajawal, sans-serif;
+    font-weight: bold;
 }
 
 .single-product-content p.single-product-pricing {

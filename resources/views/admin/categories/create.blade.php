@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'Admin | Add Category')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -19,10 +20,10 @@
                         <input type="text" class="form-control" placeholder="Name" name="name">
                     </div>
                     <button class="btn btn-success px-5" onclick="Swal.fire(
-                                    'Good job!',
-                                    'Product has been added!',
-                                    'success'
-                                  )">Save</button>
+                                        'Good job!',
+                                        'Product has been added!',
+                                        'success'
+                                      )">Save</button>
                 </form>
 
             </div>

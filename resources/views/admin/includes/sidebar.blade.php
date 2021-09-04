@@ -61,11 +61,23 @@
         </div>
     </li>
 
-    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePost" aria-expanded="true"
+            aria-controls="collapsePost">
+            <i class="fas fa-fw fa-file-alt"></i>
+            <span>Posts</span>
+        </a>
+        <div id="collapsePost"
+            class="collapse {{ request()->routeIs('admin.posts.create') || request()->routeIs('admin.posts.index') ? 'show' : '' }}"
+            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ request()->routeIs('admin.posts.create') ? 'active' : '' }}"
+                    href="{{ route('admin.posts.create') }}">Add Post</a>
+                <a class="collapse-item {{ request()->routeIs('admin.posts.index') ? 'active' : '' }}"
+                    href="{{ route('admin.posts.index') }}">All Posts</a>
+            </div>
+        </div>
     </li>
 
 

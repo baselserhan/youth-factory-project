@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title', 'Admin Dashboard')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -40,7 +41,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $categories_count }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-file-alt fa-2x text-gray-300"></i>
+                                <i class="fas fa-archive fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -76,11 +77,11 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Orders</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                    Posts</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $posts_count }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-shipping-fast fa-2x text-gray-300"></i>
+                                <i class="fas fa-file-alt fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>

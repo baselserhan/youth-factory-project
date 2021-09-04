@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Login')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -12,16 +12,7 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-3">
-                                    <a href="{{ route('login.google') }}" class="btn btn-danger btn-block">Login with
-                                        Google</a>
-                                    <a href="{{ route('login.facebook') }}" class="btn btn-primary btn-block">Login with
-                                        Facebook</a>
-                                </div>
-                            </div>
 
-                            <p style="text-align: center">OR</p>
 
                             <div class="form-group row">
 

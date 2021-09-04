@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
@@ -46,6 +47,7 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
         if ($category) {
+            Alert::success('Success', 'Category has been added successfully');
             return redirect()->route('admin.categories.index')->with('success', 'Category created successfully');
         } else {
             return redirect()->route('admin.categories.index')->with('error', 'Category not created');
@@ -91,9 +93,10 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
         if ($category) {
-            return redirect()->route('admin.categories.index')->with('success', 'Category created successfully');
+            Alert::success('Success', 'Category has been updated successfully');
+            return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully');
         } else {
-            return redirect()->route('admin.categories.index')->with('error', 'Category not created');
+            return redirect()->route('admin.categories.index')->with('error', 'Category not updated');
         }
     }
 
