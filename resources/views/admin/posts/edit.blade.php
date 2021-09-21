@@ -23,16 +23,17 @@
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image">
+                        <img width="80" src="{{ asset('uploads/' . $post->image) }}" alt="">
                         <label class="custom-file-label" for="customFile">Choose image</label>
                     </div>
                     <div class="form-group">
-                        <label style="padding-top: 10px">Excerpt</label>
+                        <label style="padding-top: 30px">Excerpt</label>
                         <input type="text" class="form-control" placeholder="Excerpt" name="excerpt"
                             value="{{ $post->excerpt }}">
                     </div>
                     <div class="form-group">
                         <label>Body</label>
-                        <textarea class="form-control" placeholder="Body" rows="5"
+                        <textarea class="form-control" placeholder="Body" rows="3"
                             name="body">{{ $post->body }}</textarea>
                     </div>
                     <button class="btn btn-info px-5">Update</button>

@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Organic Information</p>
-                        <h1>News Article</h1>
+                        <p>آخر آخبار الشركة</p>
+                        <h1>الأخبار والمقالات</h1>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                                     <span class="date"><i
                                             class="fas fa-calendar"></i>{{ $post->created_at->diffForHumans() }}</span>
                                 </p>
-                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">read more
+                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">اقرأ أكثر
                                     <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>

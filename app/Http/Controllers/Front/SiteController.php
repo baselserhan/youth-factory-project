@@ -8,6 +8,10 @@ use App\Mail\ContactUsMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Image;
+use App\Models\Slider;
+use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
@@ -15,14 +19,19 @@ class SiteController extends Controller
     public function index()
     {
 
-        $products = Product::latest()->with('category')->paginate(6);
-        $posts = Post::latest()->with('user')->paginate(6);
-        return view('front.index', compact('products', 'posts'));
+        $products = Product::latest()->with('category')->paginate(9);
+        $posts = Post::latest()->with('user')->paginate(9);
+        $images = Image::latest()->limit(8)->get();
+        $sliders = Slider::latest()->limit(5)->get();
+        $testimonials = Testimonial::latest()->limit(3)->get();
+        return view('front.index', compact('products', 'posts', 'images', 'sliders', 'testimonials'));
     }
 
     public function about()
     {
-        return view('front.about');
+        $testimonials = Testimonial::latest()->limit(3)->get();
+        $teams = Team::latest()->limit(3)->get();
+        return view('front.about', compact('testimonials', 'teams'));
     }
 
     public function products()
@@ -80,5 +89,9 @@ class SiteController extends Controller
         // ]);
 
         // return back();
+    }
+
+    public function viewGallery()
+    {
     }
 }

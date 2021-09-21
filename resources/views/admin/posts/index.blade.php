@@ -27,6 +27,7 @@
                             <th>Title</th>
                             <th>Image</th>
                             <th>Excerpt</th>
+                            <th>Slug</th>
                             <th>Author</th>
                             <th>Action</th>
                         </tr>
@@ -38,6 +39,7 @@
                                 <td>{{ $post->title }}</td>
                                 <td><img width="100" src="{{ asset('uploads/' . $post->image) }}" alt=""></td>
                                 <td>{{ $post->excerpt }}</td>
+                                <td>{{ $post->slug }}</td>
                                 <td>{{ $post->user->name }}</td>
                                 <td>
                                     <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary btn-sm"><i

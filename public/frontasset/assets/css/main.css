@@ -496,12 +496,14 @@ a.cart-btn {
 }
 
 .section-title p {
-    font-size: 15px;
+    font-size: 18px;
     width: 530px;
     margin: 0 auto;
     color: #555;
     margin-top: 10px;
     line-height: 1.8;
+    font-family: Tajawal;
+    font-weight: bold;
 }
 
 .section-title {
@@ -883,7 +885,6 @@ a.mobile-show {
     margin-bottom: 30px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 7px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -2111,7 +2112,7 @@ a.video-play-btn {
 }
 
 .abt-bg {
-    background-image: url(../img/AbuAita-products/product12.jpg);
+    background-image: url(../img/aboutus.png);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -2305,6 +2306,7 @@ ul.social-link-team li a {
 .form-title p {
     font-size: 15px;
     line-height: 1.8;
+    font-family: Tajwal;
 }
 
 .contact-form form p input[type="text"],
@@ -2353,6 +2355,7 @@ ul.social-link-team li a {
 .contact-form-box p {
     line-height: 1.8;
     opacity: 0.8;
+    font-family: Tajwal;
 }
 
 .contact-form-wrap .contact-form-box:last-child {
@@ -2365,6 +2368,7 @@ ul.social-link-team li a {
     margin: 0;
     font-weight: 600;
     padding: 95px 0;
+    font-family: Tajwal;
 }
 
 .find-location p i {

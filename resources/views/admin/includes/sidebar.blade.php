@@ -80,6 +80,79 @@
         </div>
     </li>
 
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseImage" aria-expanded="true"
+            aria-controls="collapseImage">
+            <i class="fas fa-images"></i>
+            <span>Gallery</span>
+        </a>
+        <div id="collapseImage"
+            class="collapse {{ request()->routeIs('admin.galleries.create') || request()->routeIs('admin.galleries.index') ? 'show' : '' }}"
+            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ request()->routeIs('admin.galleries.create') ? 'active' : '' }}"
+                    href="{{ route('admin.galleries.create') }}">Add Gallery</a>
+                <a class="collapse-item {{ request()->routeIs('admin.galleries.index') ? 'active' : '' }}"
+                    href="{{ route('admin.galleries.index') }}">View Gallery</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSlider" aria-expanded="true"
+            aria-controls="collapseSlider">
+            <i class="fab fa-slideshare"></i>
+            <span>Slider</span>
+        </a>
+        <div id="collapseSlider"
+            class="collapse {{ request()->routeIs('admin.sliders.create') || request()->routeIs('admin.sliders.index') ? 'show' : '' }}"
+            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ request()->routeIs('admin.sliders.create') ? 'active' : '' }}"
+                    href="{{ route('admin.sliders.create') }}">Add Slider</a>
+                <a class="collapse-item {{ request()->routeIs('admin.sliders.index') ? 'active' : '' }}"
+                    href="{{ route('admin.sliders.index') }}">View Slider</a>
+            </div>
+        </div>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTestimonial"
+            aria-expanded="true" aria-controls="collapseTestimonial">
+            <i class="fas fa-question-circle"></i>
+            <span>Testimonial</span>
+        </a>
+        <div id="collapseTestimonial"
+            class="collapse {{ request()->routeIs('admin.testimonials.create') || request()->routeIs('admin.testimonials.index') ? 'show' : '' }}"
+            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ request()->routeIs('admin.testimonials.create') ? 'active' : '' }}"
+                    href="{{ route('admin.testimonials.create') }}">Add Testimonial</a>
+                <a class="collapse-item {{ request()->routeIs('admin.testimonials.index') ? 'active' : '' }}"
+                    href="{{ route('admin.testimonials.index') }}">View Testimonial</a>
+            </div>
+        </div>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeam" aria-expanded="true"
+            aria-controls="collapseTeam">
+            <i class="fas fa-user-friends"></i>
+            <span>Teams</span>
+        </a>
+        <div id="collapseTeam"
+            class="collapse {{ request()->routeIs('admin.teams.create') || request()->routeIs('admin.teams.index') ? 'show' : '' }}"
+            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ request()->routeIs('admin.teams.create') ? 'active' : '' }}"
+                    href="{{ route('admin.teams.create') }}">Add Team</a>
+                <a class="collapse-item {{ request()->routeIs('admin.teams.index') ? 'active' : '' }}"
+                    href="{{ route('admin.teams.index') }}">View Team</a>
+            </div>
+        </div>
+    </li>
 
 
     <!-- Divider -->

@@ -171,9 +171,9 @@
                     <span class="close-btn"><i class="fas fa-window-close"></i></span>
                     <div class="search-bar">
                         <div class="search-bar-tablecell">
-                            <h3>Search For:</h3>
-                            <input type="text" placeholder="Keywords">
-                            <button type="submit">Search <i class="fas fa-search"></i></button>
+                            <h3>:ابحث عن</h3>
+                            <input type="text" placeholder="كلمات مفتاحية">
+                            <button type="submit">ابحث <i class="fas fa-search"></i></button>
                         </div>
                     </div>
                 </div>
@@ -200,9 +200,9 @@
                     <div class="footer-box get-in-touch">
                         <h2 class="widget-title">تواصل معنا</h2>
                         <ul>
-                            <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-                            <li>support@fruitkha.com</li>
-                            <li>+00 111 222 3333</li>
+                            <li>شمال غزة - شارع صلاح الدين - منطقة شعشاعة</li>
+                            <li>abuaitah.co.2015@hotmail.com</li>
+                            <li>0598893600</li>
                         </ul>
                     </div>
                 </div>
@@ -221,9 +221,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-box subscribe">
                         <h2 class="widget-title">اشترك معنا</h2>
-                        <p>Subscribe to our mailing list to get the latest updates.</p>
+                        <p>اشترك معنا لتصلك آخر الأخبار لمعرفة كل ما هو جديد</p>
                         <form action="index.html">
-                            <input type="email" placeholder="Email">
+                            <input type="email" placeholder="بريدك الإلكتروني">
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
@@ -238,17 +238,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <p>Copyrights &copy; 2021 - <a href="#">AbuAita Company</a>, All Rights
-                        Reserved.</p>
+                    <p> &copy; 2021 - <a href="#">شركة أبو عيطة</a>، جميع الحقوق محفوظة</p>
                 </div>
                 <div class="col-lg-6 text-right col-md-12">
                     <div class="social-icons">
                         <ul>
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="https://www.facebook.com/AbuAita.Co/" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/abuaita.co/" target="_blank"><i
+                                        class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -284,7 +282,7 @@
             type: 'image',
             gallery: {
                 enabled: true,
-            }
+            },
         });
     </script>
 </body>

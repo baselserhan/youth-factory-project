@@ -3,27 +3,30 @@
 @section('content')
     <!-- home page slider -->
     <div class="homepage-slider">
-        <!-- single home slider -->
-        <div class="single-homepage-slider homepage-bg-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1 text-right">
-                        <div class="hero-text">
-                            <div class="hero-text-tablecell">
-                                <p class="subtitle">! نقدم الخدمة الأفضل لزبائننا</p>
-                                <h1>! للطبيعة... مذاق آخر</h1>
-                                <div class="hero-btns">
-                                    <a href="{{ route('about') }}" class="boxed-btn">عن الشركة</a>
-                                    <a href="{{ route('contact') }}" class="bordered-btn">تواصل معنا</a>
+        @foreach ($sliders as $slider)
+            <!-- single home slider -->
+            <div class="single-homepage-slider homepage-bg-1"
+                style="background-image: url({{ asset('uploads/' . $slider->image) }})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1 text-right">
+                            <div class="hero-text">
+                                <div class="hero-text-tablecell">
+                                    <p class="subtitle">{{ $slider->subtitle }}</p>
+                                    <h1>{{ $slider->caption }}</h1>
+                                    <div class="hero-btns">
+                                        <a href="{{ route('about') }}" class="boxed-btn">عن الشركة</a>
+                                        <a href="{{ route('contact') }}" class="bordered-btn">تواصل معنا</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
-        <!-- single home slider -->
+        {{-- <!-- single home slider -->
         <div class="single-homepage-slider homepage-bg-2">
             <div class="container">
                 <div class="row">
@@ -41,8 +44,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- single home slider -->
+        </div> --}}
+        {{-- <!-- single home slider -->
         <div class="single-homepage-slider homepage-bg-3">
             <div class="container">
                 <div class="row">
@@ -50,7 +53,7 @@
                         <div class="hero-text">
                             <div class="hero-text-tablecell">
                                 <p class="subtitle">! خليك طبيعي</p>
-                                <h1>! قوتنا في جودتنا</h1>
+                                <h1>! جودة تستحق الثقة</h1>
                                 <div class="hero-btns">
                                     <a href="{{ route('about') }}" class="boxed-btn">عن الشركة</a>
                                     <a href="{{ route('contact') }}" class="bordered-btn">تواصل معنا</a>
@@ -60,7 +63,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
     <!-- end home page slider -->
@@ -74,8 +77,8 @@
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="section-title">
                         <h3><span class="orange-text">كل</span> المنتجات</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                            beatae optio.</p>
+                        <p>.يوجد لدينا العديد من المنتجات
+                            اللذيذة والشهية</p>
                     </div>
                 </div>
             </div>
@@ -107,54 +110,22 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 text-center">
                     <div class="testimonial-sliders">
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar1.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Saira Hakim <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto
-                                    beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis
-                                    iste natus error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
+                        @foreach ($testimonials as $testimonial)
+                            <div class="single-testimonial-slider">
+                                <div class="client-avater">
+                                    <img src="{{ asset('uploads/' . $testimonial->image) }}" alt="">
+                                </div>
+                                <div class="client-meta">
+                                    <h3>{{ $testimonial->name }} <span>{{ $testimonial->position }}</span></h3>
+                                    <p class="testimonial-body">
+                                        {{ $testimonial->quotation }}
+                                    </p>
+                                    <div class="last-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar2.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>David Niph <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto
-                                    beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis
-                                    iste natus error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar3.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Jacob Sikim <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto
-                                    beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis
-                                    iste natus error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -173,7 +144,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="abt-text">
-                        <p class="top-sub">منذ عام </p>
+                        <p class="top-sub"></p>
                         <h2>نحن <span class="orange-text">شركة جمال أبو عيطة</span></h2>
                         <p>شركة أبناء الحاج جمال الدين أبو عيطة - لصناعة الأجبان والألبان والمواد الغذائية
                             تعتبر من الشركات الرائدة في عالم تصنيع الأجبان والألبان حيث تهتم الشركة برغبات زبائنها، فهي تهتم
@@ -192,46 +163,17 @@
     <div class="col-lg-8 offset-lg-2 text-center">
         <div class="section-title">
             <h3><span class="orange-text">معرض</span> صور</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                beatae optio.</p>
+            <p>.صور لبعض منتجات شركة أبو عيطة المميزة</p>
         </div>
     </div>
     <div class="gallery-section">
         <div class="inner-width">
             <div class="gallery">
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar1.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar1.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar2.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar2.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar3.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar3.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar1.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar1.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar2.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar2.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar3.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar3.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar2.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar2.png') }}" alt="">
-                </a>
-
-                <a href="{{ url('frontasset/assets/img/avaters/avatar3.png') }}" class="image">
-                    <img src="{{ asset('frontasset/assets/img/avaters/avatar3.png') }}" alt="">
-                </a>
-
+                @foreach ($images as $image)
+                    <a href="{{ asset('uploads/' . $image->image) }}" class="image">
+                        <img src="{{ asset('uploads/' . $image->image) }}" alt="{{ $image->name }}">
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
@@ -263,7 +205,7 @@
                                     <span class="date"><i
                                             class="fas fa-calendar"></i>{{ $post->created_at->diffForHumans() }}</span>
                                 </p>
-                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">read more
+                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">اقرأ أكثر
                                     <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>

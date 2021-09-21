@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Read the Details</p>
-                        <h1>Single Article</h1>
+                        <p>اقرأ تفاصيل أكثر</p>
+                        <h1>تفاصيل المقال</h1>
                     </div>
                 </div>
             </div>
@@ -31,9 +31,17 @@
                             </p>
                             <h2>{{ $post->title }}</h2>
                             <p>{{ $post->body }}</p>
+                            <h4>:مشاركة</h4>
+                            <ul class="product-share">
+                                <li><a href="https://www.facebook.com/AbuAita.Co/"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="https://www.instagram.com/abuaita.co/"><i class="fab fa-instagram"></i></a>
+                                </li>
+
+                            </ul>
                         </div>
 
-                        <div class="comments-list-wrap">
+                        {{-- <div class="comments-list-wrap">
                             <h3 class="comment-count-title">3 Comments</h3>
                             <div class="comment-list">
                                 <div class="single-comment-body">
@@ -76,9 +84,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="comment-template">
+                        {{-- <div class="comment-template">
                             <h4>Leave a comment</h4>
                             <p>If you have a comment dont feel hesitate to send us your opinion.</p>
                             <form action="{{ route('store'), $post->slug }}" method="POST">
@@ -91,7 +99,10 @@
                                         required></textarea></p>
                                 <p><input type="submit" value="Submit"></p>
                             </form>
-                        </div>
+                        </div> --}}
+                        {{-- @csrf
+                        @comments(['model' => $post]) --}}
+
                     </div>
                 </div>
                 <div class="col-lg-4">

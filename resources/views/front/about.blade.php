@@ -94,39 +94,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-1"></div>
-                        <h4>Jimmy Doe <span>Farmer</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
+                @foreach ($teams as $team)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-team-item">
+                            <div class="team-bg team-bg-1"
+                                style="background-image: url({{ asset('uploads/' . $team->image) }})">
+                            </div>
+                            <h4>{{ $team->name }} <span>{{ $team->position }}</span></h4>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-2"></div>
-                        <h4>Marry Doe <span>Farmer</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-3"></div>
-                        <h4>Simon Joe <span>Farmer</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -138,54 +115,22 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 text-center">
                     <div class="testimonial-sliders">
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar1.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Saira Hakim <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
-                                    vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
-                                    error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
+                        @foreach ($testimonials as $testimonial)
+                            <div class="single-testimonial-slider">
+                                <div class="client-avater">
+                                    <img src="{{ asset('uploads/' . $testimonial->image) }}" alt="">
+                                </div>
+                                <div class="client-meta">
+                                    <h3>{{ $testimonial->name }} <span>{{ $testimonial->position }}</span></h3>
+                                    <p class="testimonial-body">
+                                        {{ $testimonial->quotation }}
+                                    </p>
+                                    <div class="last-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar2.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>David Niph <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
-                                    vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
-                                    error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar3.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Jacob Sikim <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
-                                    vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
-                                    error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

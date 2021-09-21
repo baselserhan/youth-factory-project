@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Admin | All Posts')
+@section('title', 'Admin | Add Posts')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -28,8 +28,12 @@
                         <input type="text" class="form-control" placeholder="Excerpt" name="excerpt">
                     </div>
                     <div class="form-group">
+                        <label>Slug</label>
+                        <input type="text" class="form-control" placeholder="Slug" name="slug">
+                    </div>
+                    <div class="form-group">
                         <label>Body</label>
-                        <textarea class="form-control" placeholder="Body" rows="5" name="body"></textarea>
+                        <textarea class="form-control" placeholder="Body" rows="3" name="body"></textarea>
                     </div>
                     <button class="btn btn-success px-5">Save</button>
                 </form>

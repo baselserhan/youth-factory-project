@@ -113,6 +113,7 @@ class PostController extends Controller
 
         $post = $post->update([
             'title' => $request->title,
+            'slug' => Str::slug($request->title),
             'image' => $new_name,
             'excerpt' => $request->excerpt,
             'body' => $request->body,

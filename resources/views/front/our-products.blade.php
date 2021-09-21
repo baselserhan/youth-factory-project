@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Fresh and Organic</p>
-                        <h1>Our Products</h1>
+                        <p>طبيعى %100</p>
+                        <h1>منتجاتنا</h1>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
 
             <div class="row product-list">
                 @foreach ($products as $product)
-                    <div class="col-lg-4 col-md-6 text-center {{ $category->id }}">
+                    <div class="col-lg-4 col-md-6 text-center filter-{{ $category->id }}">
                         <div class="single-product-item">
                             <div class="product-image">
                                 <a href="{{ route('productDetails', ['id' => $product->id]) }}"><img

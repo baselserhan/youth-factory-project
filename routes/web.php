@@ -15,6 +15,7 @@ Route::get('/blog/{slug}', [SiteController::class, 'newsDetails'])->name('newsDe
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 Route::post('/contact', [SiteController::class, 'contactSubmit'])->name('contactSubmit');
 Route::post('/add-comment', [SiteController::class, 'store'])->name('store');
+Route::get('/view-gallery', [SiteController::class, 'viewGallery'])->name('viewGallery');
 
 
 // Auth
