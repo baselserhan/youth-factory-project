@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>! نقدم لكم ألذ وأطيب المنتجات</p>
-                        <h1>عن الشركة</h1>
+                        <p>{{ __('general.AboutTitle') }}</p>
+                        <h1>{{ __('general.AboutPage') }}</h1>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,9 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="featured-text">
-                        <h2 class="pb-3" style="text-align: center">لماذا<span class="orange-text"> شركة أبو
-                                عيطة</span></h2>
+                        <h2 class="pb-3" style="text-align: center">{{ __('general.Why') }}<span
+                                class="orange-text">
+                                {{ __('general.Us') }}</span></h2>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 mb-4 mb-md-5">
                                 <div class="list-box d-flex">
@@ -87,9 +88,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="section-title">
-                        <h3>فريق <span class="orange-text">العمل</span></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                            beatae optio.</p>
+                        <h3>{{ __('general.Our') }} <span class="orange-text">{{ __('general.Team') }}</span></h3>
+                        <p>{{ __('general.TeamTitle') }}</p>
                     </div>
                 </div>
             </div>

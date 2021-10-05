@@ -31,7 +31,7 @@
                             </p>
                             <h2>{{ $post->title }}</h2>
                             <p>{{ $post->body }}</p>
-                            <h4>:مشاركة</h4>
+                            <h4>{{ __('general.Share') }}</h4>
                             <ul class="product-share">
                                 <li><a href="https://www.facebook.com/AbuAita.Co/"><i class="fab fa-facebook-f"></i></a>
                                 </li>
@@ -117,7 +117,7 @@
                             @endforeach
 
                         </div>
-                        <div class="archive-posts">
+                        {{-- <div class="archive-posts">
                             <h4>Archive Posts</h4>
                             <ul>
                                 <li><a href="single-news.html">JAN 2019 (5)</a></li>
@@ -126,8 +126,8 @@
                                 <li><a href="single-news.html">SEP 2019 (4)</a></li>
                                 <li><a href="single-news.html">DEC 2019 (3)</a></li>
                             </ul>
-                        </div>
-                        <div class="tag-section">
+                        </div> --}}
+                        {{-- <div class="tag-section">
                             <h4>Tags</h4>
                             <ul>
                                 <li><a href="single-news.html">Apple</a></li>
@@ -137,7 +137,7 @@
                                 <li><a href="single-news.html">Lemon</a></li>
                                 <li><a href="single-news.html">Banana</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

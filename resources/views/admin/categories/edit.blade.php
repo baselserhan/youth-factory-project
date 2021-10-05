@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Category</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.Edit Category') }}</h1>
         </div>
 
         <!-- Content Row -->
@@ -18,15 +18,16 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name"
+                        <label>{{ __('dashboard.Name') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Name') }}" name="name"
                             value="{{ $category->name }}">
                     </div>
-                    <button class="btn btn-info px-5" onclick="Swal.fire(
-                                                                                        'Good job!',
-                                                                                        'Product has been updated!',
-                                                                                        'success'
-                                                                                      )">Update</button>
+                    <button class="btn btn-info px-5"
+                        onclick="Swal.fire(
+                                                                                                'Good job!',
+                                                                                                'Product has been updated!',
+                                                                                                'success'
+                                                                                              )">{{ __('dashboard.Update') }}</button>
                 </form>
 
             </div>

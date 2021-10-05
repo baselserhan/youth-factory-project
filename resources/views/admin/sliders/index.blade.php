@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">All Sliders</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.View All Sliders') }}</h1>
         </div>
 
         <style>
@@ -23,11 +23,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr class="bg-dark text-white">
-                            <th>ID</th>
-                            <th>SubTitle</th>
-                            <th>Caption</th>
-                            <th>Image</th>
-                            <th>Action</th>
+                            <th>{{ __('dashboard.ID') }}</th>
+                            <th>{{ __('dashboard.SubTitle') }}</th>
+                            <th>{{ __('dashboard.Caption') }}</th>
+                            <th>{{ __('dashboard.Image') }}</th>
+                            <th>{{ __('dashboard.Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,8 +40,8 @@
                                 <td>
                                     <a href="{{ route('admin.sliders.edit', $slider->id) }}"
                                         class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                    <form class="d-inline" action="{{ route('admin.sliders.destroy', $slider->id) }}"
-                                        method="POST">
+                                    <form class="d-inline"
+                                        action="{{ route('admin.sliders.destroy', $slider->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm"><i class="fas fa-trash"

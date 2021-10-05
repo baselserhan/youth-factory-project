@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>24/7 فريق الدعم والمساعدة متاح</p>
-                        <h1>تواصل معنا</h1>
+                        <p>{{ __('general.ContactTitle') }}</p>
+                        <h1>{{ __('general.ContactPage') }}</h1>
                     </div>
                 </div>
             </div>
@@ -22,11 +22,10 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="form-title">
-                        <h2 style="text-align: center">هل لديك أي أسئلة؟</h2>
-                        <p style="text-align: center">في حال كان لديك أي استفسار، لا تتردد في التواصل
-                            معنا وطلب المساعدة من
-                            خلال فريق الدعم والمساعدة
-                            فهو متاح 24/7</p>
+                        <h2 style="text-align: center">{{ __('general.ContactText') }}</h2>
+                        <p style="text-align: center; font-family: Tajawal; font-weight: bold">
+                            {{ __('general.ContactDescription') }}
+                        </p>
                     </div>
                     <div id="form_status"></div>
                     <div class="contact-form">
@@ -48,37 +47,41 @@
                         <form action="{{ route('contactSubmit') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="text" placeholder="الاسم" name="name" id="name"
-                                    class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+                                <input type="text" placeholder="{{ __('general.ContactNamePlaceholder') }}" name="name"
+                                    id="name" class="form-control @error('name') is-invalid @enderror"
+                                    value="{{ old('name') }}">
                                 @error('name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                                <input type="email" placeholder="البريد الإلكتروني" name="email" id="email"
-                                    class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                <input type="email" placeholder="{{ __('general.ContactEmailPlaceholder') }}" name="email"
+                                    id="email" class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}">
                                 @error('email')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
 
 
-                                <input type="tel" placeholder="رقم الجوال" name="phone" id="phone"
-                                    class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
+                                <input type="tel" placeholder="{{ __('general.ContactPhonePlaceholder') }}" name="phone"
+                                    id="phone" class="form-control @error('phone') is-invalid @enderror"
+                                    value="{{ old('phone') }}">
                                 @error('phone')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                                <input type="text" placeholder="العنوان" name="subject" id="subject"
-                                    class="form-control @error('subject') is-invalid @enderror"
+                                <input type="text" placeholder="{{ __('general.ContactSubjectPlaceholder') }}"
+                                    name="subject" id="subject" class="form-control @error('subject') is-invalid @enderror"
                                     value="{{ old('subject') }}">
                                 @error('subject')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
 
-                                <textarea name="message" id="message" cols="20" rows="5" placeholder="الرسالة"
+                                <textarea name="message" id="message" cols="20" rows="5"
+                                    placeholder="{{ __('general.ContactMessagePlaceholder') }}"
                                     class="form-control @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
                                 @error('message')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
 
-                                <input type="submit" value="إرسال">
+                                <input type="submit" value="{{ __('general.ContactSend') }}">
                             </div>
                         </form>
                     </div>
@@ -86,16 +89,18 @@
                 <div class="col-lg-4">
                     <div class="contact-form-wrap">
                         <div class="contact-form-box">
-                            <h4><i class="fas fa-map"></i> عنوان الشركة</h4>
-                            <p>شمال غزة - شارع صلاح الدين - منطقة شعشاعة<br> فلسطين</p>
+                            <h4><i class="fas fa-map"></i> {{ __('general.CompanyAdress') }}</h4>
+                            <p style="font-family: Tajawal; font-weight: bold">{{ __('general.Adress') }}</p>
                         </div>
                         <div class="contact-form-box">
-                            <h4><i class="far fa-clock"></i> ساعات العمل</h4>
-                            <p>السبت - الخميس: 8 صباحاً إلى 10 مساءً</p>
+                            <h4><i class="far fa-clock"></i> {{ __('general.WorkHours') }}</h4>
+                            <p style="font-family: Tajawal; font-weight: bold">{{ __('general.WorkHoursTitle') }}</p>
                         </div>
                         <div class="contact-form-box">
-                            <h4><i class="fas fa-address-book"></i> تواصل مع الشركة</h4>
-                            <p>رقم الجوال: 0598893600<br>البريد الإلكتروني: abuaitah.co.2015@hotmail.com</p>
+                            <h4><i class="fas fa-address-book"></i> {{ __('general.ContactPage') }}</h4>
+                            <p style="font-family: Tajawal; font-weight: bold">{{ __('general.Phone') }}:
+                                0598893600<br>{{ __('general.Email') }}:
+                                abuaitah.co.2015@hotmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +114,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p> <i class="fas fa-map-marker-alt"></i> حدد موقعنا الجفرافي على الخريطة</p>
+                    <p style="font-family: Tajawal; font-weight: bold"> <i class="fas fa-map-marker-alt"></i>
+                        {{ __('general.Location') }}</p>
                 </div>
             </div>
         </div>

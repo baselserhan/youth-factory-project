@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Add Category</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.Add Category') }}</h1>
         </div>
 
         <!-- Content Row -->
@@ -16,14 +16,14 @@
                 <form action="{{ route('admin.categories.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name">
+                        <label>{{ __('dashboard.Name') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Name') }}" name="name">
                     </div>
                     <button class="btn btn-success px-5" onclick="Swal.fire(
-                                        'Good job!',
-                                        'Product has been added!',
-                                        'success'
-                                      )">Save</button>
+                                                'Good job!',
+                                                'Product has been added!',
+                                                'success'
+                                              )">{{ __('dashboard.Save') }}</button>
                 </form>
 
             </div>

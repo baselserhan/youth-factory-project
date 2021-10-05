@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.Dashboard') }}</h1>
         </div>
 
         <!-- Content Row -->
@@ -18,8 +18,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Products</div>
+                                <div class="text-md font-weight-bold text-primary text-uppercase mb-1">
+                                    {{ __('dashboard.Products') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $products_count }}</div>
                             </div>
                             <div class="col-auto">
@@ -36,8 +36,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Categories</div>
+                                <div class="text-md font-weight-bold text-success text-uppercase mb-1">
+                                    {{ __('dashboard.Categories') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $categories_count }}</div>
                             </div>
                             <div class="col-auto">
@@ -54,7 +54,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Users
+                                <div class="text-md font-weight-bold text-info text-uppercase mb-1">
+                                    {{ __('dashboard.Users') }}
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
@@ -76,8 +77,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Posts</div>
+                                <div class="text-md font-weight-bold text-warning text-uppercase mb-1">
+                                    {{ __('dashboard.Posts') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $posts_count }}</div>
                             </div>
                             <div class="col-auto">
@@ -93,8 +94,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                                    Galleries</div>
+                                <div class="text-md font-weight-bold text-secondary text-uppercase mb-1">
+                                    {{ __('dashboard.Gallery') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $galleries_count }}</div>
                             </div>
                             <div class="col-auto">
@@ -110,8 +111,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                    Sliders</div>
+                                <div class="text-md font-weight-bold text-dark text-uppercase mb-1">
+                                    {{ __('dashboard.Slider') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sliders_count }}</div>
                             </div>
                             <div class="col-auto">
@@ -127,8 +128,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Testimonials</div>
+                                <div class="text-md font-weight-bold text-success text-uppercase mb-1">
+                                    {{ __('dashboard.Testimonial') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $testimonials_count }}</div>
                             </div>
                             <div class="col-auto">
@@ -144,8 +145,8 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                    Teams</div>
+                                <div class="text-md font-weight-bold text-danger text-uppercase mb-1">
+                                    {{ __('dashboard.Teams') }}</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $teams_count }}</div>
                             </div>
                             <div class="col-auto">

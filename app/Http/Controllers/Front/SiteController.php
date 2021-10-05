@@ -37,8 +37,8 @@ class SiteController extends Controller
     public function products()
     {
         $products = Product::latest()->with('category')->paginate(6);
-        $categories = Category::all();
-        return view('front.our-products', compact('products', 'categories'));
+        // $categories = Category::all();
+        return view('front.our-products', compact('products'));
     }
 
     public function productDetails($id)
@@ -89,9 +89,5 @@ class SiteController extends Controller
         // ]);
 
         // return back();
-    }
-
-    public function viewGallery()
-    {
     }
 }

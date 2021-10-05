@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>آخر آخبار الشركة</p>
-                        <h1>الأخبار والمقالات</h1>
+                        <p>{{ __('general.BlogTitle') }}</p>
+                        <h1>{{ __('general.Blog') }}</h1>
                     </div>
                 </div>
             </div>
@@ -21,9 +21,8 @@
         <div class="container">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
-                    <h3><span class="orange-text">آخر</span> المقالات</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                        beatae optio.</p>
+                    <h3><span class="orange-text">{{ __('general.Latest') }}</span> {{ __('general.News') }}</h3>
+                    <p>{{ __('general.Latest NewsTitle') }}</p>
                 </div>
             </div>
             <div class="row">
@@ -41,7 +40,8 @@
                                     <span class="date"><i
                                             class="fas fa-calendar"></i>{{ $post->created_at->diffForHumans() }}</span>
                                 </p>
-                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">اقرأ أكثر
+                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">
+                                    {{ __('general.Know More') }}
                                     <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>

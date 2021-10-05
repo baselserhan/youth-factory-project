@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">All Posts</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.View All Posts') }}</h1>
         </div>
 
         <style>
@@ -23,13 +23,12 @@
                 <table class="table table-hover">
                     <thead>
                         <tr class="bg-dark text-white">
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Excerpt</th>
-                            <th>Slug</th>
-                            <th>Author</th>
-                            <th>Action</th>
+                            <th>{{ __('dashboard.ID') }}</th>
+                            <th>{{ __('dashboard.Title') }}</th>
+                            <th>{{ __('dashboard.Image') }}</th>
+                            <th>{{ __('dashboard.Excerpt') }}</th>
+                            <th>{{ __('dashboard.Username') }}</th>
+                            <th>{{ __('dashboard.Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +38,6 @@
                                 <td>{{ $post->title }}</td>
                                 <td><img width="100" src="{{ asset('uploads/' . $post->image) }}" alt=""></td>
                                 <td>{{ $post->excerpt }}</td>
-                                <td>{{ $post->slug }}</td>
                                 <td>{{ $post->user->name }}</td>
                                 <td>
                                     <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary btn-sm"><i

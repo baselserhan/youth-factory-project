@@ -28,12 +28,12 @@
                 <div class="col-md-7">
                     <div class="single-product-content">
                         <h3>{{ $product->name }}</h3>
-                        <p class="single-product-pricing">{{ $product->price }}</p>
+                        <p class="single-product-pricing"></p>
                         <p>{{ $product->description }}</p>
                         <div class="single-product-form">
                             <p><strong>Category: </strong>{{ $product->category->name }}</p>
                         </div>
-                        <h4>Share:</h4>
+                        <h4>{{ __('general.Category') }}</h4>
                         <ul class="product-share">
                             <li><a href="https://www.facebook.com/AbuAita.Co/"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/abuaita.co/"><i class="fab fa-instagram"></i></a></li>

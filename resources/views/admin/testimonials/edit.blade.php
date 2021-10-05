@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Testimonial</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.Edit Testimonial') }}</h1>
         </div>
 
         <!-- Content Row -->
@@ -18,26 +18,26 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name"
+                        <label>{{ __('dashboard.Name') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Name') }}" name="name"
                             value="{{ $testimonial->name }}">
                     </div>
                     <div class="form-group">
-                        <label>Position</label>
-                        <input type="text" class="form-control" placeholder="Position" name="position"
-                            value="{{ $testimonial->position }}">
+                        <label>{{ __('dashboard.Position') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Position') }}"
+                            name="position" value="{{ $testimonial->position }}">
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image">
-                        <img width="80" src="{{ asset('uploads/' . $testimonial->image) }}" alt="">
-                        <label class="custom-file-label" for="customFile">Choose image</label>
+                        <img width="50" src="{{ asset('uploads/' . $testimonial->image) }}" alt="">
+                        <label class="custom-file-label" for="customFile">{{ __('dashboard.Choose Image') }}</label>
                     </div>
                     <div class="form-group">
-                        <label style="padding-top: 10px">Quotation</label>
-                        <input type="text" class="form-control" placeholder="Quotation" name="quotation"
-                            value="{{ $testimonial->quotation }}">
+                        <label style="padding-top: 10px">{{ __('dashboard.Quotation') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Quotation') }}"
+                            name="quotation" value="{{ $testimonial->quotation }}">
                     </div>
-                    <button class="btn btn-success px-5 mt-4">Save</button>
+                    <button class="btn btn-info px-5 mt-4">{{ __('dashboard.Update') }}</button>
                 </form>
 
             </div>

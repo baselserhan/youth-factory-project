@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->currentLocale() }}" dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}
+    ">
 
 <head>
     <meta charset="UTF-8">
@@ -98,7 +99,37 @@
             }
         }
 
+        @media screen and (max-width:975px) {
+            nav.main-menu ul li:hover>a {
+                color: #f28123;
+            }
+        }
+
     </style>
+
+    @if (app()->getLocale() == 'ar')
+        <style>
+            .main-menu,
+            .abt-section,
+            .footer-area {
+                direction: rtl;
+            }
+
+            .abt-text {
+                text-align: center;
+            }
+
+            .copyright {
+                direction: rtl;
+                text-align: right
+            }
+
+            .social-icons {
+                text-align: left;
+            }
+
+        </style>
+    @endif
 </head>
 
 <body>
@@ -121,34 +152,47 @@
                         <div class="site-logo">
                             <a href="{{ route('homepage') }}">
                                 <img src="{{ asset('frontasset/assets/img/logo.jpg') }}" alt=""
-                                    style="border-radius: 50%" width="80px">
+                                    style="border-radius: 50%;" width="80px">
                             </a>
                         </div>
                         <!-- logo -->
 
                         <!-- menu start -->
-                        <nav class="main-menu" style="direction: rtl; font-size: 16px; margin-top: -19px">
+                        <nav class="main-menu" style="font-size: 16px; margin-top: -19px;">
                             <ul>
                                 <li class="{{ request()->routeIs('homepage') ? 'current-list-item' : '' }}">
-                                    <a href="{{ route('homepage') }}">الصفحة الرئيسية</a>
+                                    <a href="{{ route('homepage') }}">{{ __('general.HomePage') }}</a>
                                 </li>
                                 <li class="{{ request()->routeIs('about') ? 'current-list-item' : '' }}">
-                                    <a href=" {{ route('about') }}">عن الشركة</a>
+                                    <a href=" {{ route('about') }}">{{ __('general.AboutPage') }}</a>
                                 </li>
                                 <li class="{{ request()->routeIs('products') ? 'current-list-item' : '' }}"><a
-                                        href="{{ route('products') }}">منتجاتنا</a></li>
+                                        href="{{ route('products') }}">{{ __('general.ProductsPage') }}</a></li>
 
                                 <li class="{{ request()->routeIs('news') ? 'current-list-item' : '' }}"><a
-                                        href="{{ route('news') }}">مدونة</a></li>
+                                        href="{{ route('news') }}">{{ __('general.BlogPage') }}</a></li>
 
                                 <li class="{{ request()->routeIs('contact') ? 'current-list-item' : '' }}"><a
-                                        href="{{ route('contact') }}">تواصل معنا</a></li>
+                                        href="{{ route('contact') }}">{{ __('general.ContactPage') }}</a></li>
                                 <li>
                                     <div class="header-icons">
+                                        <ul class="d-inline">
+                                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                                @if ($localeCode != app()->currentLocale())
+                                                    <li>
+                                                        <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                            {{ $properties['native'] }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
                                         <a class="shopping-cart" href="{{ route('login') }}"><i
                                                 class="fas fa-user"></i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>
+
                                     </div>
                                 </li>
                             </ul>
@@ -171,9 +215,9 @@
                     <span class="close-btn"><i class="fas fa-window-close"></i></span>
                     <div class="search-bar">
                         <div class="search-bar-tablecell">
-                            <h3>:ابحث عن</h3>
-                            <input type="text" placeholder="كلمات مفتاحية">
-                            <button type="submit">ابحث <i class="fas fa-search"></i></button>
+                            <h3>{{ __('general.Search for') }}</h3>
+                            <input type="text" placeholder="{{ __('general.Keywords') }}">
+                            <button type="submit">{{ __('general.Search') }} <i class="fas fa-search"></i></button>
                         </div>
                     </div>
                 </div>
@@ -185,22 +229,20 @@
     @yield('content')
 
     <!-- footer -->
-    <div class="footer-area" style="direction: rtl">
+    <div class="footer-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-box about-widget">
-                        <h2 class="widget-title">عن الشركة</h2>
-                        <p>
-                            شركة أبناء الحاج جمال الدين أبو عيطة - لصناعة الأجبان والألبان والمواد الغذائية
-                            تعتبر من الشركات الرائدة في عالم تصنيع الأجبان والألبان حيث تهتم الشركة برغبات زبائنها </p>
+                        <h2 class="widget-title">{{ __('general.AboutPage') }}</h2>
+                        <p>{{ __('general.About Company') }} </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-box get-in-touch">
-                        <h2 class="widget-title">تواصل معنا</h2>
+                        <h2 class="widget-title">{{ __('general.ContactPage') }}</h2>
                         <ul>
-                            <li>شمال غزة - شارع صلاح الدين - منطقة شعشاعة</li>
+                            <li>{{ __('general.Adress') }}</li>
                             <li>abuaitah.co.2015@hotmail.com</li>
                             <li>0598893600</li>
                         </ul>
@@ -208,22 +250,22 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-box pages">
-                        <h2 class="widget-title">صفحات</h2>
+                        <h2 class="widget-title">{{ __('general.Pages') }}</h2>
                         <ul>
-                            <li><a href="{{ route('homepage') }}">الصفحة الرئيسية</a></li>
-                            <li><a href="{{ route('about') }}">عن الشركة</a></li>
-                            <li><a href="{{ route('products') }}">منتجاتنا</a></li>
-                            <li><a href="{{ route('news') }}">مدونة</a></li>
-                            <li><a href="{{ route('contact') }}">تواصل معنا</a></li>
+                            <li><a href="{{ route('homepage') }}">{{ __('general.HomePage') }}</a></li>
+                            <li><a href="{{ route('about') }}">{{ __('general.AboutPage') }}</a></li>
+                            <li><a href="{{ route('products') }}">{{ __('general.ProductsPage') }}</a></li>
+                            <li><a href="{{ route('news') }}">{{ __('general.BlogPage') }}</a></li>
+                            <li><a href="{{ route('contact') }}">{{ __('general.ContactPage') }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-box subscribe">
-                        <h2 class="widget-title">اشترك معنا</h2>
-                        <p>اشترك معنا لتصلك آخر الأخبار لمعرفة كل ما هو جديد</p>
+                        <h2 class="widget-title">{{ __('general.Subscribe') }}</h2>
+                        <p>{{ __('general.SubscribeTitle') }}</p>
                         <form action="index.html">
-                            <input type="email" placeholder="بريدك الإلكتروني">
+                            <input type="email" placeholder="{{ __('general.SubscribeEmailPlaceholder') }}">
                             <button type="submit"><i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
@@ -237,10 +279,21 @@
     <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <p> &copy; 2021 - <a href="#">شركة أبو عيطة</a>، جميع الحقوق محفوظة</p>
+                <div class="col-lg-4 col-md-12">
+                    <p>
+                        &copy;
+                        <script>
+                            document.write(new Date().getUTCFullYear());
+                        </script> - <a href="#">{{ __('general.Jamal AbuAita Company') }}</a>،
+                        {{ __('general.Copyright') }}
+                    </p>
                 </div>
-                <div class="col-lg-6 text-right col-md-12">
+                <div class="col-lg-4 col-md-12 text-center text-white"
+                    style="padding-top: 15.5px; opacity: 0.7; font-family: Tajawal">
+                    <span>{{ __('general.Developer') }}</span>
+                </div>
+                <div class=" col-lg-4
+                    text-right col-md-12">
                     <div class="social-icons">
                         <ul>
                             <li><a href="https://www.facebook.com/AbuAita.Co/" target="_blank"><i

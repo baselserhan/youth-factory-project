@@ -21,6 +21,8 @@
 
 
                                 <div class="col-md-6 offset-md-3">
+                                    <span style="position: absolute; left: -5px; top: 7px;"><i class="fas fa-user">
+                                        </i></span>
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                         name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
                                         placeholder="Name">
@@ -37,6 +39,8 @@
 
 
                                 <div class="col-md-6 offset-md-3">
+                                    <span style="position: absolute; left: -5px; top: 7px;"><i
+                                            class="fas fa-envelope"></i></span>
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}" required autocomplete="email"
                                         placeholder="E-Mail Address">
@@ -53,6 +57,8 @@
 
 
                                 <div class="col-md-6 offset-md-3">
+                                    <span style="position: absolute; left: -5px; top: 7px;"><i
+                                            class="fas fa-key"></i></span>
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password" placeholder="Password">
@@ -69,6 +75,8 @@
 
 
                                 <div class="col-md-6 offset-md-3">
+                                    <span style="position: absolute; left: -5px; top: 7px;"><i
+                                            class="fas fa-check-circle"></i></span>
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password"
                                         placeholder="Confirm Password">

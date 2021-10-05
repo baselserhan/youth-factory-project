@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->currentLocale() }}" dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}>
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset=" utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>@yield('title')</title>
+<title>@yield('title')</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('adminasset/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+<!-- Custom fonts for this template-->
+<link href="{{ asset('adminasset/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+<link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('adminasset/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<!-- Custom styles for this template-->
+<link href="{{ asset('adminasset/css/sb-admin-2.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+@if (app()->currentLocale() == 'ar')
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .sidebar-dark .nav-item .nav-link {
+            text-align: right;
+        }
+
+        .custom-file-label {
+            padding-right: 90px;
+        }
+
+    </style>
+@endif
 </head>
 
 <body id="page-top">
@@ -43,9 +60,8 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    {{-- <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
@@ -55,11 +71,11 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
 
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="{{ app()->currentLocale() == 'ar' ? 'navbar-nav mr-auto' : 'navbar-nav ml-auto' }}">
 
 
 
@@ -84,11 +100,46 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
                                     @csrf
                                 </form>
                             </div>
                         </li>
+                        <div class=" dropdown">
+                            <i class="dropdown-toggle fas fa-globe" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="margin-top: 25px">
+                                {{ LaravelLocalization::getCurrentLocaleName() }}
+                            </i>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="navbar-nav ml-auto" style="margin-top: 20px">
+                                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        @if ($localeCode != app()->currentLocale())
+                                            <li>
+                                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                                                    class="text-secondary mx-3" style="text-decoration: none;">
+                                                    {{ $properties['native'] }}
+                                                </a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <ul class="navbar-nav ml-auto" style="margin-top: 20px">
+                            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                @if ($localeCode != app()->currentLocale())
+                                    <li>
+                                        <a rel="alternate" hreflang="{{ $localeCode }}"
+                                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                            {{ $properties['native'] }}
+                                        </a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul> --}}
 
                     </ul>
 
@@ -106,7 +157,11 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; AbuAita Company 2021</span>
+                        <span>&copy;
+                            <script>
+                                document.write(new Date().getUTCFullYear());
+                            </script> - <a href="#">{{ __('general.Jamal AbuAita Company') }}</a>،
+                            {{ __('general.Copyright') }}</span>
                     </div>
                 </div>
             </footer>

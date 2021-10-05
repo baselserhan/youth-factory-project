@@ -18,8 +18,10 @@
 
 
                                 <div class="col-md-6 offset-md-3">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                                    <span style="position: absolute; left: -5px; top: 7px;"><i
+                                            class="fas fa-envelope"></i></span><input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus
                                         placeholder="E-Mail Address">
 
                                     @error('email')
@@ -34,6 +36,8 @@
 
 
                                 <div class="col-md-6 offset-md-3">
+                                    <span style="position: absolute; left: -5px; top: 7px;"><i
+                                            class="fas fa-key"></i></span>
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password" placeholder="Password">

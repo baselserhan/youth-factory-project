@@ -76,9 +76,9 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="section-title">
-                        <h3><span class="orange-text">كل</span> المنتجات</h3>
-                        <p>.يوجد لدينا العديد من المنتجات
-                            اللذيذة والشهية</p>
+                        <h3><span class="orange-text">{{ __('general.All') }}</span> {{ __('general.Products') }}
+                        </h3>
+                        <p>{{ __('general.ProductsTitle') }}</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                                         src="{{ asset('uploads/' . $product->image) }}" alt=""></a>
                             </div>
                             <h3>{{ $product->name }}</h3>
-                            <p class="product-price">{{ $product->price }} </p>
+                            <p class="product-price"></p>
 
                         </div>
                     </div>
@@ -145,13 +145,10 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="abt-text">
                         <p class="top-sub"></p>
-                        <h2>نحن <span class="orange-text">شركة جمال أبو عيطة</span></h2>
-                        <p>شركة أبناء الحاج جمال الدين أبو عيطة - لصناعة الأجبان والألبان والمواد الغذائية
-                            تعتبر من الشركات الرائدة في عالم تصنيع الأجبان والألبان حيث تهتم الشركة برغبات زبائنها، فهي تهتم
-                            بزيادة منتجاتها من خلال زيادة الأجهزة والمعدات الصناعية كما وتهتم بشكل أساسي في نظافة هذه
-                            الأجهزة لكي تصل منتجاتنا للمستهلك بأفضل شكل وافضل صورة، منتجاتنا مصنوعة من الحليب الطازج
-                            والمبستر </p>
-                        <a href="{{ route('about') }}" class="boxed-btn mt-4">اعرف أكثر</a>
+                        <h2>{{ __('general.We') }} <span
+                                class="orange-text">{{ __('general.Jamal AbuAita Company') }}</span></h2>
+                        <p>{{ __('general.About Company') }} </p>
+                        <a href="{{ route('about') }}" class="boxed-btn mt-4">{{ __('general.Know More') }}</a>
                     </div>
                 </div>
             </div>
@@ -162,8 +159,8 @@
     <!-- gallery section -->
     <div class="col-lg-8 offset-lg-2 text-center">
         <div class="section-title">
-            <h3><span class="orange-text">معرض</span> صور</h3>
-            <p>.صور لبعض منتجات شركة أبو عيطة المميزة</p>
+            <h3><span class="orange-text">{{ __('general.Show') }}</span> {{ __('general.Gallery') }}</h3>
+            <p>{{ __('general.GalleryTitle') }}</p>
         </div>
     </div>
     <div class="gallery-section">
@@ -185,9 +182,8 @@
         <div class="container">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
-                    <h3><span class="orange-text">آخر</span> المقالات</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet
-                        beatae optio.</p>
+                    <h3><span class="orange-text">{{ __('general.Latest') }}</span> {{ __('general.News') }}</h3>
+                    <p>{{ __('general.Latest NewsTitle') }}</p>
                 </div>
             </div>
             <div class="row">
@@ -205,7 +201,8 @@
                                     <span class="date"><i
                                             class="fas fa-calendar"></i>{{ $post->created_at->diffForHumans() }}</span>
                                 </p>
-                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">اقرأ أكثر
+                                <a href="{{ route('newsDetails', $post->slug) }}" class="read-more-btn">
+                                    {{ __('general.Read More') }}
                                     <i class="fas fa-angle-right"></i></a>
                             </div>
                         </div>

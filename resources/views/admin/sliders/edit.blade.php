@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Slider</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.Edit Slider') }}</h1>
         </div>
 
         <!-- Content Row -->
@@ -18,21 +18,21 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                        <label>SubTitle</label>
-                        <input type="text" class="form-control" placeholder="SubTitle" name="subtitle"
-                            value="{{ $slider->subtitle }}">
+                        <label>{{ __('dashboard.SubTitle') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.SubTitle') }}"
+                            name="subtitle" value="{{ $slider->subtitle }}">
                     </div>
                     <div class="form-group">
-                        <label>Caption</label>
-                        <input type="text" class="form-control" placeholder="Caption" name="caption"
-                            value="{{ $slider->caption }}">
+                        <label>{{ __('dashboard.Caption') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Caption') }}"
+                            name="caption" value="{{ $slider->caption }}">
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image">
                         <img width="60" src="{{ asset('uploads/' . $slider->image) }}" alt="">
-                        <label class="custom-file-label" for="customFile">Choose image</label>
+                        <label class="custom-file-label" for="customFile">{{ __('dashboard.Choose Image') }}</label>
                     </div>
-                    <button class="btn btn-info px-5 mt-4">Update</button>
+                    <button class="btn btn-info px-5 mt-4">{{ __('dashboard.Update') }}</button>
                 </form>
 
             </div>

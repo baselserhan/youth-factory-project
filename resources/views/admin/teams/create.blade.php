@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Add Team</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.Add Team') }}</h1>
         </div>
 
         <!-- Content Row -->
@@ -16,18 +16,19 @@
                 <form action="{{ route('admin.teams.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name">
+                        <label>{{ __('dashboard.Name') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Name') }}" name="name">
                     </div>
                     <div class="form-group">
-                        <label>Position</label>
-                        <input type="text" class="form-control" placeholder="Position" name="position">
+                        <label>{{ __('dashboard.Position') }}</label>
+                        <input type="text" class="form-control" placeholder="{{ __('dashboard.Position') }}"
+                            name="position">
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="image">
-                        <label class="custom-file-label" for="customFile">Choose image</label>
+                        <label class="custom-file-label" for="customFile">{{ __('dashboard.Choose Image') }}</label>
                     </div>
-                    <button class="btn btn-success px-5 mt-4">Save</button>
+                    <button class="btn btn-success px-5 mt-4">{{ __('dashboard.Save') }}</button>
                 </form>
 
             </div>

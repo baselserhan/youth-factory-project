@@ -6,7 +6,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">All Teams</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ __('dashboard.View All Teams') }}</h1>
         </div>
 
         <style>
@@ -23,11 +23,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr class="bg-dark text-white">
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Image</th>
-                            <th>Action</th>
+                            <th>{{ __('dashboard.ID') }}</th>
+                            <th>{{ __('dashboard.Name') }}</th>
+                            <th>{{ __('dashboard.Position') }}</th>
+                            <th>{{ __('dashboard.Image') }}</th>
+                            <th>{{ __('dashboard.Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>

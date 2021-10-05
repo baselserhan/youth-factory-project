@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>طبيعى %100</p>
-                        <h1>منتجاتنا</h1>
+                        <p>{{ __('general.ProductsTitle') }}</p>
+                        <h1>{{ __('general.ProductsPage') }}</h1>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
     <div class="product-section mt-150 mb-150">
         <div class="container">
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12">
                     <div class="product-filters">
                         <ul>
@@ -31,11 +31,11 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row product-list">
                 @foreach ($products as $product)
-                    <div class="col-lg-4 col-md-6 text-center filter-{{ $category->id }}">
+                    <div class="col-lg-4 col-md-6 text-center filter-">
                         <div class="single-product-item">
                             <div class="product-image">
                                 <a href="{{ route('productDetails', ['id' => $product->id]) }}"><img
