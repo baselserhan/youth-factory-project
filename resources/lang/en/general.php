@@ -67,4 +67,6 @@ return [
     'Share' => 'Share',
     'Category' => 'Category',
     'Developer' => 'Made with ❤ by Basel Serhan',
+    'Product Details' => 'Product Details',
+    'Post Details' => 'Post Details'
 ];

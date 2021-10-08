@@ -149,4 +149,14 @@ class ProductController extends Controller
 
         return redirect()->route('admin.products.index')->with('success', 'Product has been deleted');
     }
+
+    public function search()
+    {
+        // $search = $request->get('search');
+        // $products = Product::where('name', 'like', '%' . $search . '%')->paginate(5);
+        // return view('admin.products.index', compact('products'));
+        $search_text = $_GET['query'];
+        $products = Product::where('name', 'like', '%' . $search_text . '%')->with('category')->with('user')->get();
+        return view('admin.products.search', compact('products'));
+    }
 }

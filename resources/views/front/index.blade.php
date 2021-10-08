@@ -15,8 +15,10 @@
                                     <p class="subtitle">{{ $slider->subtitle }}</p>
                                     <h1>{{ $slider->caption }}</h1>
                                     <div class="hero-btns">
-                                        <a href="{{ route('about') }}" class="boxed-btn">عن الشركة</a>
-                                        <a href="{{ route('contact') }}" class="bordered-btn">تواصل معنا</a>
+                                        <a href="{{ route('about') }}"
+                                            class="boxed-btn">{{ __('general.AboutPage') }}</a>
+                                        <a href="{{ route('contact') }}"
+                                            class="bordered-btn">{{ __('general.ContactPage') }}</a>
                                     </div>
                                 </div>
                             </div>

@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>اقرأ تفاصيل أكثر</p>
-                        <h1>تفاصيل المقال</h1>
+                        <p>{{ __('general.Read More') }}</p>
+                        <h1>{{ __('general.Post Details') }}</h1>
                     </div>
                 </div>
             </div>
@@ -32,13 +32,21 @@
                             <h2>{{ $post->title }}</h2>
                             <p>{{ $post->body }}</p>
                             <h4>{{ __('general.Share') }}</h4>
-                            <ul class="product-share">
+
+
+
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox_eebd"></div>
+
+
+
+                            {{-- <ul class="product-share">
                                 <li><a href="https://www.facebook.com/AbuAita.Co/"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li><a href="https://www.instagram.com/abuaita.co/"><i class="fab fa-instagram"></i></a>
                                 </li>
 
-                            </ul>
+                            </ul> --}}
                         </div>
 
                         {{-- <div class="comments-list-wrap">
@@ -108,7 +116,7 @@
                 <div class="col-lg-4">
                     <div class="sidebar-section">
                         <div class="recent-posts">
-                            <h4>Recent Posts</h4>
+                            <h4>{{ __('general.Latest NewsTitle') }}</h4>
                             @foreach ($posts as $post)
                                 <ul>
                                     <li><a href="{{ route('newsDetails', $post->slug) }}">{{ $post->title }}</a>

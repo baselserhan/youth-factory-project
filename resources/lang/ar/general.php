@@ -71,4 +71,6 @@ return [
     'Share' => 'مشاركة',
     'Category' => 'الصنف',
     'Developer' => 'برمجة مطور البرمجيات: باسل سرحان',
+    'Product Details' => 'تفاصيل المنتج',
+    'Post Details' => 'تفاصيل المقال'
 ];

@@ -22,5 +22,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::resource('sliders', SliderController::class);
         Route::resource('testimonials', TestimonialController::class);
         Route::resource('teams', TeamController::class);
+        Route::get('/search', [ProductController::class, 'search'])->name('search');
     });
 });

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Responsive Website for Abu Aita company">
+    <meta name="description" content="Responsive Website for AbuAita Company">
 
     <!-- title -->
     <title>@yield('title')</title>
@@ -150,7 +150,7 @@
                     <div class="main-menu-wrap">
                         <!-- logo -->
                         <div class="site-logo">
-                            <a href="{{ route('homepage') }}">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ asset('frontasset/assets/img/logo.jpg') }}" alt=""
                                     style="border-radius: 50%;" width="80px">
                             </a>
@@ -188,10 +188,56 @@
                                                 @endif
                                             @endforeach
                                         </ul>
-                                        <a class="shopping-cart" href="{{ route('login') }}"><i
-                                                class="fas fa-user"></i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>
+                                        {{-- <a class="shopping-cart nav-item dropdown" href="{{ route('login') }}"><i
+                                                class="fas fa-user nav-link dropdown-toggle" id="dropdownMenuButton"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                {{ Auth::user()->name }}</i></a> --}}
+                                        <!-- Right Side Of Navbar -->
+                                        <ul class="navbar-nav d-inline">
+                                            <!-- Authentication Links -->
+                                            @guest
+                                                @if (Route::has('login'))
+
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{ route('login') }}"><i
+                                                                class="fas fa-sign-in-alt"></i> {{ __('Login') }}</a>
+                                                    </li>
+                                                @endif
+
+                                                @if (Route::has('register'))
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{ route('register') }}"> <i
+                                                                class="fas fa-user">
+                                                            </i> {{ __('Register') }}</a>
+                                                    </li>
+                                                @endif
+                                            @else
+                                                <li class="nav-item dropdown">
+                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false" v-pre>
+                                                        {{ Auth::user()->name }}
+                                                    </a>
+
+                                                    <div class="dropdown-menu dropdown-menu-right"
+                                                        aria-labelledby="navbarDropdown">
+                                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
+                                                                                                                                                                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                            {{ __('Logout') }}
+                                                        </a>
+
+                                                        <form id="logout-form" action="{{ route('logout') }}"
+                                                            method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                            @endguest
+                                        </ul>
 
                                     </div>
                                 </li>
@@ -213,13 +259,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <span class="close-btn"><i class="fas fa-window-close"></i></span>
-                    <div class="search-bar">
+                    <form class="search-bar" type="get" action="{{ route('search') }}">
                         <div class="search-bar-tablecell">
                             <h3>{{ __('general.Search for') }}</h3>
-                            <input type="text" placeholder="{{ __('general.Keywords') }}">
+                            <input type="text" placeholder="{{ __('general.Keywords') }}" name="query">
                             <button type="submit">{{ __('general.Search') }} <i class="fas fa-search"></i></button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -338,6 +384,9 @@
             },
         });
     </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-615f0b12fb9e181b"></script>
+
 </body>
 
 </html>

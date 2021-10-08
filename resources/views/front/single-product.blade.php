@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>اقرأ تفاصيل أكثر</p>
-                        <h1>تفاصيل المنتج</h1>
+                        <p>{{ __('general.Read More') }}</p>
+                        <h1>{{ __('general.Product Details') }}</h1>
                     </div>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                         <p class="single-product-pricing"></p>
                         <p>{{ $product->description }}</p>
                         <div class="single-product-form">
-                            <p><strong>Category: </strong>{{ $product->category->name }}</p>
+                            <p><strong>{{ __('general.Category') }}: </strong>{{ $product->category->name }}</p>
                         </div>
-                        <h4>{{ __('general.Category') }}</h4>
+                        <h4>{{ __('general.Share') }}</h4>
                         <ul class="product-share">
                             <li><a href="https://www.facebook.com/AbuAita.Co/"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/abuaita.co/"><i class="fab fa-instagram"></i></a></li>

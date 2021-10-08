@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Post;
-use App\Models\Product;
-use App\Mail\ContactUsMail;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Team;
 use App\Models\Image;
 use App\Models\Slider;
-use App\Models\Team;
+use App\Models\Product;
+use App\Models\Category;
+use App\Mail\ContactUsMail;
 use App\Models\Testimonial;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+
 
 class SiteController extends Controller
 {
@@ -55,7 +56,7 @@ class SiteController extends Controller
     public function newsDetails($id)
     {
         $post = Post::where('slug', $id)->first();
-        $posts = Post::latest()->with('user')->limit(4)->get();
+        $posts = Post::latest()->with('user')->limit(10)->get();
         return view('front.single-news', compact('post', 'posts'));
     }
     public function contact()
@@ -78,16 +79,13 @@ class SiteController extends Controller
         Mail::to('baselserhan1993@gmail.com')->send(new ContactUsMail($data));
     }
 
-    public function store(Post $post, Request $request)
+    public function search()
     {
-        dd($request->all());
-        // $post->comments()->create([
-        //     'user_id' => $request->user()->id,
-        //     'email' => $request->user()->email,
-        //     'message' => $request->message,
-        //     'post_id' => $post->id,
-        // ]);
-
-        // return back();
+        // $search = $request->get('search');
+        // $products = Product::where('name', 'like', '%' . $search . '%')->paginate(5);
+        // return view('admin.products.index', compact('products'));
+        $search_text = $_GET['query'];
+        $products = Product::where('name', 'like', '%' . $search_text . '%')->with('category')->with('user')->get();
+        return view('front.search', compact('products'));
     }
 }

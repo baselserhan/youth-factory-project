@@ -16,6 +16,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('/blog/{slug}', [SiteController::class, 'newsDetails'])->name('newsDetails');
     Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
     Route::post('/contact', [SiteController::class, 'contactSubmit'])->name('contactSubmit');
+    // Route::get('/social-share', [SiteController::class, 'newsDetails'])->name('newsDetails');
+    Route::get('/search', [SiteController::class, 'search'])->name('search');
 });
 
 // Auth
